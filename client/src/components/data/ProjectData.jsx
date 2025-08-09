@@ -24,7 +24,7 @@ const projects = [
         timeframe: "July 2025 - August 2025",
         gallery: [portfolioImage1, portfolioImage2, portfolioImage3],
         live: "https://your-portfolio-link.com",
-        github: "https://github.com/yourusername/portfolio",
+        github: "https://github.com/phetolaM/My-portfolio-website",
     },
     // {
     //     name: "E-commerce Platform",
