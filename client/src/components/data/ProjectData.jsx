@@ -23,7 +23,7 @@ const projects = [
         skills: ["React", "CSS", "Responsive Design"],
         timeframe: "July 2025 - August 2025",
         gallery: [portfolioImage1, portfolioImage2, portfolioImage3],
-        live: "https://your-portfolio-link.com",
+        live: "https://phetola-mashashane-portfolio.vercel.app/",
         github: "https://github.com/phetolaM/My-portfolio-website",
     },
     // {

@@ -1,7 +1,9 @@
 import React from "react";
-import myCV from "../../../assets/myCV/MashashaneCV.pdf";
 import { FaSun, FaMoon } from "react-icons/fa";
 import "./navbar.css";
+
+import myCV from "../../../assets/myCV/MashashaneCV.pdf";
+
 
 function Navbar({ toggleDarkMode, darkMode }) {
     const handleDownload = () => {
