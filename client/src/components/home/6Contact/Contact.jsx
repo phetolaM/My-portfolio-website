@@ -15,15 +15,15 @@ function Contact() {
         toast.success("Message sent successfully!", {
             duration: 5000,
             style: {
-                background: '#4ade80',
-                color: '#fff',
-                padding: '16px 24px',
-                borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                background: "#4ade80",
+                color: "#fff",
+                padding: "16px 24px",
+                borderRadius: "8px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             },
             iconTheme: {
-                primary: '#fff',
-                secondary: '#4ade80',
+                primary: "#fff",
+                secondary: "#4ade80",
             },
         });
     };
@@ -32,15 +32,15 @@ function Contact() {
         toast.error(message || "Failed to send message. Please try again.", {
             duration: 5000,
             style: {
-                background: '#ef4444',
-                color: '#fff',
-                padding: '16px 24px',
-                borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                background: "#ef4444",
+                color: "#fff",
+                padding: "16px 24px",
+                borderRadius: "8px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             },
             iconTheme: {
-                primary: '#fff',
-                secondary: '#ef4444',
+                primary: "#fff",
+                secondary: "#ef4444",
             },
         });
     };
@@ -72,7 +72,7 @@ function Contact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         if (!validateForm()) {
             return;
         }
@@ -120,7 +120,7 @@ function Contact() {
                     error: { duration: 5000 },
                 }}
             />
-            
+
             <section className="contact-section">
                 <h2 className="section-title">Contact</h2>
 
@@ -196,6 +196,10 @@ function Contact() {
                             <div className="detail-item">
                                 <span className="detail-icon">📧</span>
                                 <span>pemashashane2@gmail.com</span>
+                            </div>
+                            <div className="detail-item">
+                                <span className="detail-icon">📞</span>
+                                <span>+27 66 212 6872</span>
                             </div>
                             <div className="detail-item">
                                 <span className="detail-icon">📍</span>
