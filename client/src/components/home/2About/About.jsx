@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import { Typewriter } from "react-simple-typewriter";
-import profilePicture from "../../../assets/profile.jpg";
+import profilePicture from "../../../assets/23456578.jpg";
 
 function AboutMe() {
   return (

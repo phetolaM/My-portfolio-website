@@ -4,17 +4,16 @@ import { SiMongodb, SiMongoose, SiExpress } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 
 // images
-// import image1 from "../../assets/p1 (1).png";
-// import image2 from "../../assets/p2.png";
-// import image3 from "../../assets/p3.png";
-// import image4 from "../../assets/p4.png";
-
 // portfolio project
-import portfolioImage1 from '../../assets/Screenshot 2025-08-09 124505.png'
-import portfolioImage2 from '../../assets/Screenshot 2025-08-09 124517.png'
-import portfolioImage3 from '../../assets/Screenshot 2025-08-09 124529.png'
+import portfolioImage1 from '../../assets/projects/portfolio website/Screenshot 2025-08-09 124505.png'
+import portfolioImage2 from '../../assets/projects/portfolio website/Screenshot 2025-08-09 124517.png'
+import portfolioImage3 from '../../assets/projects/portfolio website/Screenshot 2025-08-09 124529.png'
 
-// on the type, there is fullstack,frontend,
+// results calculator
+import resultsCalculatorImage1 from '../../assets/projects/results calculator/Screenshot 2025-10-14 224754.png'
+import resultsCalculatorImage2 from '../../assets/projects/results calculator/Screenshot 2025-10-14 224826.png'
+
+// on the type, there is fullstack,frontend, backend
 
 const projects = [
     {
@@ -26,15 +25,15 @@ const projects = [
         live: "https://phetola-mashashane-portfolio.vercel.app/",
         github: "https://github.com/phetolaM/My-portfolio-website",
     },
-    // {
-    //     name: "E-commerce Platform",
-    //     skills: ["Node.js", "MongoDB", "Express"],
-    //     timeframe: "Jan 2025 - March 2025",
-    //     type: "frontend",
-    //     gallery: [image2, image4],
-    //     live: "https://ecommerce-demo-link.com",
-    //     github: "https://github.com/yourusername/portfolio",
-    // },
+    {
+        name: "University Results Calculator",
+        type: "frontend",
+        skills: ["React js", "CSS"],
+        timeframe: "oct 2025 - oct 2025",
+        gallery: [resultsCalculatorImage1, resultsCalculatorImage2],
+        live: "https://results-tracker-blue.vercel.app/",
+        github: "https://github.com/phetolaM/results-tracker",
+    },
     // {
     //     name: "Blog CMS",
     //     skills: ["React", "Firebase", "Authentication"],
