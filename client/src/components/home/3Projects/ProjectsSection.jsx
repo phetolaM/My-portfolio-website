@@ -10,16 +10,17 @@ import "./projectSection.css";
 
 function PortfolioProjectsSection() {
     // Check if projects array exists and has any items
-    const hasProjects = projects && Array.isArray(projects) && projects.length > 0;
-    
+    const hasProjects =
+        projects && Array.isArray(projects) && projects.length > 0;
+
     // If there are projects, filter out any that are missing a name
-    const validProjects = hasProjects 
-        ? projects.filter(project => project.name) 
+    const validProjects = hasProjects
+        ? projects.filter((project) => project.name)
         : [];
-    
+
     // Determine if we should show actual projects or the "coming soon" card
     const showProjects = validProjects.length > 0;
-    
+
     // Only show "View More" button if there are more than 2 valid projects
     const showMoreButton = showProjects && validProjects.length > 2;
 
@@ -27,7 +28,7 @@ function PortfolioProjectsSection() {
         <div className="portfolio-container" id="projects">
             <section className="projects-section">
                 <h2 className="section-title">Projects</h2>
-                
+
                 <div className="projects-wrapper">
                     {showProjects ? (
                         validProjects.slice(0, 2).map((project, index) => (
@@ -36,9 +37,24 @@ function PortfolioProjectsSection() {
                                     <h3 className="project-name">
                                         {project.name}
                                     </h3>
-                                    <div className="project-timeframe">
-                                        <span className="time-icon">⏱</span>{" "}
-                                        {project.timeframe || "Ongoing"}
+                                    <div className="project-meta">
+                                        <div className="project-timeframe">
+                                            <span className="time-icon">⏱</span>{" "}
+                                            {project.timeframe || "Ongoing"}
+                                        </div>
+                                        {project.deployed && (
+                                            <div
+                                                className="project-deployed"
+                                                title={`Deployed ${project.deployed}`}
+                                            >
+                                                <span className="deploy-icon">
+                                                    🚀
+                                                </span>
+                                                <span>
+                                                    Deployed {project.deployed}
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
 
@@ -51,13 +67,16 @@ function PortfolioProjectsSection() {
                                         modules={[Navigation, Pagination]}
                                         className="project-swiper"
                                     >
-                                        {Array.isArray(project.gallery) && project.gallery.length > 0 ? (
+                                        {Array.isArray(project.gallery) &&
+                                        project.gallery.length > 0 ? (
                                             project.gallery.map((img, i) => (
                                                 <SwiperSlide key={i}>
                                                     <div className="image-container">
                                                         <img
                                                             src={img}
-                                                            alt={`${project.name} ${i + 1}`}
+                                                            alt={`${
+                                                                project.name
+                                                            } ${i + 1}`}
                                                         />
                                                     </div>
                                                 </SwiperSlide>
@@ -65,7 +84,9 @@ function PortfolioProjectsSection() {
                                         ) : (
                                             <SwiperSlide>
                                                 <div className="image-container no-image">
-                                                    <span>No images available</span>
+                                                    <span>
+                                                        No images available
+                                                    </span>
                                                 </div>
                                             </SwiperSlide>
                                         )}
@@ -76,17 +97,22 @@ function PortfolioProjectsSection() {
                                     <div className="project-skills">
                                         <strong>Skills:</strong>
                                         <div className="skills-container">
-                                            {Array.isArray(project.skills) && project.skills.length > 0 ? (
-                                                project.skills.map((skill, i) => (
-                                                    <span
-                                                        key={i}
-                                                        className="skill-tag"
-                                                    >
-                                                        {skill}
-                                                    </span>
-                                                ))
+                                            {Array.isArray(project.skills) &&
+                                            project.skills.length > 0 ? (
+                                                project.skills.map(
+                                                    (skill, i) => (
+                                                        <span
+                                                            key={i}
+                                                            className="skill-tag"
+                                                        >
+                                                            {skill}
+                                                        </span>
+                                                    )
+                                                )
                                             ) : (
-                                                <span className="no-skills">No skills listed</span>
+                                                <span className="no-skills">
+                                                    No skills listed
+                                                </span>
                                             )}
                                         </div>
                                     </div>
@@ -133,8 +159,12 @@ function PortfolioProjectsSection() {
                                 <div className="project-skills">
                                     <strong>Status:</strong>
                                     <div className="skills-container">
-                                        <span className="skill-tag">In Development</span>
-                                        <span className="skill-tag">Coming Soon</span>
+                                        <span className="skill-tag">
+                                            In Development
+                                        </span>
+                                        <span className="skill-tag">
+                                            Coming Soon
+                                        </span>
                                     </div>
                                 </div>
                                 <div className="project-buttons">

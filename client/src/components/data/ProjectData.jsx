@@ -5,20 +5,19 @@ import { AiOutlineApi } from "react-icons/ai";
 
 // images
 // portfolio project
-import portfolioImage1 from '../../assets/projects/portfolio website/Screenshot 2025-08-09 124505.png'
-import portfolioImage2 from '../../assets/projects/portfolio website/Screenshot 2025-08-09 124517.png'
-import portfolioImage3 from '../../assets/projects/portfolio website/Screenshot 2025-08-09 124529.png'
+import portfolioImage1 from "../../assets/projects/portfolio website/Screenshot 2025-08-09 124505.png";
+import portfolioImage2 from "../../assets/projects/portfolio website/Screenshot 2025-08-09 124517.png";
+import portfolioImage3 from "../../assets/projects/portfolio website/Screenshot 2025-08-09 124529.png";
 
 // results calculator
-import resultsCalculatorImage1 from '../../assets/projects/results calculator/Screenshot 2025-10-14 224754.png'
-import resultsCalculatorImage2 from '../../assets/projects/results calculator/Screenshot 2025-10-14 224826.png'
-
+import resultsCalculatorImage1 from "../../assets/projects/results calculator/Screenshot 2025-10-14 224754.png";
+import resultsCalculatorImage2 from "../../assets/projects/results calculator/Screenshot 2025-10-14 224826.png";
 
 // Matric2success
-import matric2succesImage1 from '../../assets/projects/matric2succes/Screenshot 2025-10-17 030454.png'
-import matric2succesImage2 from '../../assets/projects/matric2succes/Screenshot 2025-10-17 030606.png'
-import matric2succesImage3 from '../../assets/projects/matric2succes/Screenshot 2025-10-17 030750.png'
-import matric2succesImage4 from '../../assets/projects/matric2succes/Screenshot 2025-10-18 125336.png'
+import matric2succesImage1 from "../../assets/projects/matric2succes/Screenshot 2025-10-17 030454.png";
+import matric2succesImage2 from "../../assets/projects/matric2succes/Screenshot 2025-10-17 030606.png";
+import matric2succesImage3 from "../../assets/projects/matric2succes/Screenshot 2025-10-17 030750.png";
+import matric2succesImage4 from "../../assets/projects/matric2succes/Screenshot 2025-10-18 125336.png";
 
 // on the type, there is fullstack,frontend, backend
 
@@ -30,6 +29,7 @@ const projects = [
         timeframe: "July 2025 - August 2025",
         gallery: [portfolioImage1, portfolioImage2, portfolioImage3],
         live: "https://phetola-mashashane-portfolio.vercel.app/",
+        deployed: "Aug 2025",
         github: "https://github.com/phetolaM/My-portfolio-website",
     },
     {
@@ -37,8 +37,14 @@ const projects = [
         type: "fullstack",
         skills: ["React js", "CSS", "Node js", "Express js", "MongoDB"],
         timeframe: "March 2025 - still ongoing",
-        gallery: [matric2succesImage4, matric2succesImage2, matric2succesImage3, matric2succesImage1],
+        gallery: [
+            matric2succesImage4,
+            matric2succesImage2,
+            matric2succesImage3,
+            matric2succesImage1,
+        ],
         live: "https://www.matric2succes.co.za",
+        deployed: "Oct 2025",
         // github: "https://github.com/phetolaM/results-tracker",
     },
     {
@@ -48,6 +54,7 @@ const projects = [
         timeframe: "oct 2025 - oct 2025",
         gallery: [resultsCalculatorImage1, resultsCalculatorImage2],
         live: "https://results-tracker-blue.vercel.app/",
+        deployed: "Oct 2025",
         github: "https://github.com/phetolaM/results-tracker",
     },
 
@@ -81,7 +88,7 @@ const skills = [
     {
         name: "React",
         icon: <FaReact style={{ color: "aqua", fontSize: "3rem" }} />,
-        level: 80
+        level: 80,
     },
     {
         name: "Node.js",
@@ -92,7 +99,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
     {
         name: "MongoDB",
@@ -103,7 +111,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
     {
         name: "Mongoose",
@@ -114,7 +123,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
     {
         name: "Express.js",
@@ -125,7 +135,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
     {
         name: "REST APIs",
@@ -136,7 +147,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
     {
         name: "Git",
@@ -147,7 +159,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
     {
         name: "GitHub",
@@ -158,7 +171,8 @@ const skills = [
                     fontSize: "3rem",
                 }}
             />
-        ),level: 80
+        ),
+        level: 80,
     },
 ];
 
