@@ -9,16 +9,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-
-import './projectsPage.css'
+import "./projectsPage.css";
 
 const ProjectsList = () => {
     const [showTopBtn, setShowTopBtn] = useState(false);
     const [filter, setFilter] = useState("all");
 
-    const filteredProjects = filter === "all" 
-        ? projects 
-        : projects.filter(proj => proj.type === filter);
+    const filteredProjects =
+        filter === "all"
+            ? projects
+            : projects.filter((proj) => proj.type === filter);
 
     const noProjectsFound = filteredProjects.length === 0;
 
@@ -47,7 +47,9 @@ const ProjectsList = () => {
                     {["all", "frontend", "fullstack", "backend"].map((cat) => (
                         <button
                             key={cat}
-                            className={`filter-btn ${filter === cat ? "active" : ""}`}
+                            className={`filter-btn ${
+                                filter === cat ? "active" : ""
+                            }`}
                             onClick={() => setFilter(cat)}
                         >
                             {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -59,7 +61,9 @@ const ProjectsList = () => {
             <p className="project-count-message">
                 {filter === "all"
                     ? `Total Projects: ${filteredProjects.length}`
-                    : `${filter.charAt(0).toUpperCase() + filter.slice(1)} Projects: ${filteredProjects.length}`}
+                    : `${
+                          filter.charAt(0).toUpperCase() + filter.slice(1)
+                      } Projects: ${filteredProjects.length}`}
             </p>
 
             <AnimatePresence>
@@ -72,11 +76,11 @@ const ProjectsList = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="no-projects-icon">📂</div>
-                        <h3 className="no-projects-title">
-                            No Projects Found
-                        </h3>
+                        <h3 className="no-projects-title">No Projects Found</h3>
                         <p className="no-projects-message">
-                            No {filter.charAt(0).toUpperCase() + filter.slice(1)} projects match your filter.
+                            No{" "}
+                            {filter.charAt(0).toUpperCase() + filter.slice(1)}{" "}
+                            projects match your filter.
                         </p>
                     </motion.div>
                 )}
@@ -95,9 +99,11 @@ const ProjectsList = () => {
                         >
                             <div className="card-header">
                                 <h3>{project.name}</h3>
-                                <span className="project-type">{project.type}</span>
+                                <span className="project-type">
+                                    {project.type}
+                                </span>
                             </div>
-                            
+
                             <div className="project-gallery">
                                 <Swiper
                                     spaceBetween={0}
@@ -107,37 +113,66 @@ const ProjectsList = () => {
                                     modules={[Navigation, Pagination]}
                                     className="project-swiper"
                                 >
-                                    {project.gallery.map((img, i) => (
-                                        <SwiperSlide key={i}>
+                                    {Array.isArray(project.gallery) &&
+                                    project.gallery.length > 0 ? (
+                                        project.gallery.map((img, i) => (
+                                            <SwiperSlide key={i}>
+                                                <div className="image-container">
+                                                    <img
+                                                        src={img}
+                                                        alt={`${project.name} ${
+                                                            i + 1
+                                                        }`}
+                                                    />
+                                                </div>
+                                            </SwiperSlide>
+                                        ))
+                                    ) : (
+                                        <SwiperSlide>
                                             <div className="image-container">
-                                                <img
-                                                    src={img}
-                                                    alt={`${project.name} ${i + 1}`}
-                                                />
+                                                <span>No images</span>
                                             </div>
                                         </SwiperSlide>
-                                    ))}
+                                    )}
                                 </Swiper>
                             </div>
-                            
+
                             <div className="card-content">
-                                <div className="project-timeframe">
-                                    <strong>Timeframe:</strong> {project.timeframe}
+                                <div className="project-meta-row">
+                                    <div className="project-timeframe-pill">
+                                        <span className="time-icon">⏱</span>{" "}
+                                        {project.timeframe || "Ongoing"}
+                                    </div>
+                                    {project.deployed && (
+                                        <div
+                                            className="project-deployed"
+                                            title={`Deployed ${project.deployed}`}
+                                        >
+                                            <span className="deploy-icon">
+                                                🚀
+                                            </span>
+                                            <span>
+                                                Deployed {project.deployed}
+                                            </span>
+                                        </div>
+                                    )}
                                 </div>
-                                
+
                                 <div className="project-description">
                                     {project.description}
                                 </div>
-                                
+
                                 <div className="project-skills">
                                     <strong>Skills:</strong>
                                     <div className="skills-container">
                                         {project.skills.map((skill, i) => (
-                                            <span key={i} className="skill-tag">{skill}</span>
+                                            <span key={i} className="skill-tag">
+                                                {skill}
+                                            </span>
                                         ))}
                                     </div>
                                 </div>
-                                
+
                                 <div className="project-buttons">
                                     {project.live && (
                                         <a
@@ -165,7 +200,7 @@ const ProjectsList = () => {
                     ))}
                 </AnimatePresence>
             </div>
-            
+
             {showTopBtn && (
                 <motion.button
                     className="scroll-to-top-btn"
