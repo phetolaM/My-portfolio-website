@@ -13,6 +13,13 @@ import portfolioImage3 from '../../assets/projects/portfolio website/Screenshot 
 import resultsCalculatorImage1 from '../../assets/projects/results calculator/Screenshot 2025-10-14 224754.png'
 import resultsCalculatorImage2 from '../../assets/projects/results calculator/Screenshot 2025-10-14 224826.png'
 
+
+// Matric2success
+import matric2succesImage1 from '../../assets/projects/matric2succes/Screenshot 2025-10-17 030454.png'
+import matric2succesImage2 from '../../assets/projects/matric2succes/Screenshot 2025-10-17 030606.png'
+import matric2succesImage3 from '../../assets/projects/matric2succes/Screenshot 2025-10-17 030750.png'
+import matric2succesImage4 from '../../assets/projects/matric2succes/Screenshot 2025-10-18 125336.png'
+
 // on the type, there is fullstack,frontend, backend
 
 const projects = [
@@ -26,6 +33,15 @@ const projects = [
         github: "https://github.com/phetolaM/My-portfolio-website",
     },
     {
+        name: "matric2succes",
+        type: "fullstack",
+        skills: ["React js", "CSS", "Node js", "Express js", "MongoDB"],
+        timeframe: "March 2025 - still ongoing",
+        gallery: [matric2succesImage4, matric2succesImage2, matric2succesImage3, matric2succesImage1],
+        live: "https://www.matric2succes.co.za",
+        // github: "https://github.com/phetolaM/results-tracker",
+    },
+    {
         name: "University Results Calculator",
         type: "frontend",
         skills: ["React js", "CSS"],
@@ -34,6 +50,7 @@ const projects = [
         live: "https://results-tracker-blue.vercel.app/",
         github: "https://github.com/phetolaM/results-tracker",
     },
+
     // {
     //     name: "Blog CMS",
     //     skills: ["React", "Firebase", "Authentication"],
