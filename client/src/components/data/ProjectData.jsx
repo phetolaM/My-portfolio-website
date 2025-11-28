@@ -19,19 +19,17 @@ import matric2succesImage2 from "../../assets/projects/matric2succes/Screenshot 
 import matric2succesImage3 from "../../assets/projects/matric2succes/Screenshot 2025-10-17 030750.png";
 import matric2succesImage4 from "../../assets/projects/matric2succes/Screenshot 2025-10-18 125336.png";
 
+// Breenhin
+import BreenhinImage1 from "../../assets/projects/breenhin/Screenshot 2025-11-28 113831.png";
+import BreenhinImage2 from "../../assets/projects/breenhin/Screenshot 2025-11-28 113842.png";
+import BreenhinImage3 from "../../assets/projects/breenhin/Screenshot 2025-11-28 113849.png";
+import BreenhinImage4 from "../../assets/projects/breenhin/Screenshot 2025-11-28 113859.png";
+import BreenhinImage5 from "../../assets/projects/breenhin/Screenshot 2025-11-28 113915.png";
+import BreenhinImage6 from "../../assets/projects/breenhin/Screenshot 2025-11-28 113927.png";
+
 // on the type, there is fullstack,frontend, backend
 
 const projects = [
-    {
-        name: "My Portfolio Website",
-        type: "frontend",
-        skills: ["React", "CSS", "Responsive Design"],
-        timeframe: "July 2025 - August 2025",
-        gallery: [portfolioImage1, portfolioImage2, portfolioImage3],
-        live: "https://phetola-mashashane-portfolio.vercel.app/",
-        deployed: "Aug 2025",
-        github: "https://github.com/phetolaM/My-portfolio-website",
-    },
     {
         name: "matric2succes",
         type: "fullstack",
@@ -43,8 +41,22 @@ const projects = [
             matric2succesImage3,
             matric2succesImage1,
         ],
-        live: "https://www.matric2succes.co.za",
         deployed: "Oct 2025",
+        description:
+        "I saw that many matric students struggled to find suitable university courses and understand entry requirements. To solve this, I built Matric2Succes, a web platform that helps students explore courses, match them with their results, and discover where they qualify — making university applications simpler and more accessible.",
+        live: "https://www.matric2succes.co.za",
+        // github: "https://github.com/phetolaM/results-tracker",
+    },
+    {
+        name: "Breenhin",
+        type: "frontend",
+        skills: ["React js", "CSS"],
+        timeframe: "Nov 2025 - Nov 2025",
+        gallery: [BreenhinImage1, BreenhinImage2, BreenhinImage3, BreenhinImage4, BreenhinImage5, BreenhinImage6],
+        live: "https://breenhin.vercel.app/",
+        deployed: "Nov 2025",
+        description:
+            "I was tasked with designing and developing a modern, responsive website for Breenhin Construction & Supply, showcasing their construction services and office supply products. I built the site using React, Framer Motion, and CSS, focusing on clean design, smooth animations, and an intuitive user experience.",
         // github: "https://github.com/phetolaM/results-tracker",
     },
     {
@@ -55,7 +67,21 @@ const projects = [
         gallery: [resultsCalculatorImage1, resultsCalculatorImage2],
         live: "https://results-tracker-blue.vercel.app/",
         deployed: "Oct 2025",
+        description:
+            "I noticed many university students struggled to calculate their DP (semester mark) and understand what exam scores they needed to achieve distinctions or pass. To solve this, I built a Results Calculator App that lets students input their coursework marks and instantly see their DP and required exam scores, helping them track progress and plan better for exams.",
         github: "https://github.com/phetolaM/results-tracker",
+    },
+    {
+        name: "My Portfolio Website",
+        type: "frontend",
+        skills: ["React", "CSS", "Responsive Design"],
+        timeframe: "July 2025 - August 2025",
+        gallery: [portfolioImage1, portfolioImage2, portfolioImage3],
+        live: "https://phetola-mashashane-portfolio.vercel.app/",
+        deployed: "Aug 2025",
+        description:
+            "Personal portfolio showcasing projects, skills and contact information — built with React and responsive CSS.",
+        github: "https://github.com/phetolaM/My-portfolio-website",
     },
 
     // {

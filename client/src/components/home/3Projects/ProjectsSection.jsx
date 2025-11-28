@@ -10,8 +10,7 @@ import "./projectSection.css";
 
 function PortfolioProjectsSection() {
     // Check if projects array exists and has any items
-    const hasProjects =
-        projects && Array.isArray(projects) && projects.length > 0;
+    const hasProjects = projects && Array.isArray(projects) && projects.length > 0;
 
     // If there are projects, filter out any that are missing a name
     const validProjects = hasProjects
@@ -27,35 +26,18 @@ function PortfolioProjectsSection() {
     return (
         <div className="portfolio-container" id="projects">
             <section className="projects-section">
-                <h2 className="section-title">Projects</h2>
+                <div className="section-header">
+                    <h2 className="section-title">Featured Projects</h2>
+                    <p className="section-subtitle">A showcase of my latest work and development projects</p>
+                </div>
 
                 <div className="projects-wrapper">
                     {showProjects ? (
                         validProjects.slice(0, 2).map((project, index) => (
                             <div key={index} className="project-card">
-                                <div className="project-header">
-                                    <h3 className="project-name">
-                                        {project.name}
-                                    </h3>
-                                    <div className="project-meta">
-                                        <div className="project-timeframe">
-                                            <span className="time-icon">⏱</span>{" "}
-                                            {project.timeframe || "Ongoing"}
-                                        </div>
-                                        {project.deployed && (
-                                            <div
-                                                className="project-deployed"
-                                                title={`Deployed ${project.deployed}`}
-                                            >
-                                                <span className="deploy-icon">
-                                                    🚀
-                                                </span>
-                                                <span>
-                                                    Deployed {project.deployed}
-                                                </span>
-                                            </div>
-                                        )}
-                                    </div>
+                                <div className="project-badge">
+                                    {project.featured && <span className="featured-badge">Featured</span>}
+                                    <span className="project-type">{project.type || "Web Application"}</span>
                                 </div>
 
                                 <div className="project-gallery">
@@ -74,9 +56,7 @@ function PortfolioProjectsSection() {
                                                     <div className="image-container">
                                                         <img
                                                             src={img}
-                                                            alt={`${
-                                                                project.name
-                                                            } ${i + 1}`}
+                                                            alt={`${project.name} ${i + 1}`}
                                                         />
                                                     </div>
                                                 </SwiperSlide>
@@ -84,9 +64,8 @@ function PortfolioProjectsSection() {
                                         ) : (
                                             <SwiperSlide>
                                                 <div className="image-container no-image">
-                                                    <span>
-                                                        No images available
-                                                    </span>
+                                                    <div className="placeholder-icon">📱</div>
+                                                    <span>Project Preview</span>
                                                 </div>
                                             </SwiperSlide>
                                         )}
@@ -94,24 +73,42 @@ function PortfolioProjectsSection() {
                                 </div>
 
                                 <div className="project-content">
+                                    <div className="project-header">
+                                        <h3 className="project-name">{project.name}</h3>
+                                        <div className="project-meta">
+                                            <div className="project-timeframe">
+                                                <span className="time-icon">⏱</span>
+                                                {project.timeframe || "Ongoing"}
+                                            </div>
+                                            {project.deployed && (
+                                                <div className="project-deployed">
+                                                    <span className="deploy-icon">🚀</span>
+                                                    <span>Live</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* New Description Section */}
+                                    <div className="project-description">
+                                        <p>{project.description || "A modern web application showcasing innovative solutions and best practices in development."}</p>
+                                    </div>
+
                                     <div className="project-skills">
-                                        <strong>Skills:</strong>
+                                        <div className="skills-header">
+                                            <strong>Technologies Used</strong>
+                                        </div>
                                         <div className="skills-container">
                                             {Array.isArray(project.skills) &&
                                             project.skills.length > 0 ? (
-                                                project.skills.map(
-                                                    (skill, i) => (
-                                                        <span
-                                                            key={i}
-                                                            className="skill-tag"
-                                                        >
-                                                            {skill}
-                                                        </span>
-                                                    )
-                                                )
+                                                project.skills.map((skill, i) => (
+                                                    <span key={i} className="skill-tag">
+                                                        {skill}
+                                                    </span>
+                                                ))
                                             ) : (
                                                 <span className="no-skills">
-                                                    No skills listed
+                                                    Technologies not specified
                                                 </span>
                                             )}
                                         </div>
@@ -123,9 +120,10 @@ function PortfolioProjectsSection() {
                                                 href={project.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="project-button"
+                                                className="project-button primary"
                                             >
-                                                View Project
+                                                <span className="button-icon">🌐</span>
+                                                View Live
                                             </a>
                                         )}
                                         {project.github && (
@@ -133,10 +131,17 @@ function PortfolioProjectsSection() {
                                                 href={project.github}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="project-button github"
+                                                className="project-button secondary"
                                             >
-                                                GitHub Repo
+                                                <span className="button-icon"></span>
+                                                Source Code
                                             </a>
+                                        )}
+                                        {!project.live && !project.github && (
+                                            <button className="project-button primary" disabled>
+                                                <span className="button-icon">🔒</span>
+                                                Coming Soon
+                                            </button>
                                         )}
                                     </div>
                                 </div>
@@ -144,11 +149,6 @@ function PortfolioProjectsSection() {
                         ))
                     ) : (
                         <div className="coming-soon-card">
-                            <div className="project-header">
-                                <h3 className="project-name">
-                                    Projects Still Coming
-                                </h3>
-                            </div>
                             <div className="project-gallery">
                                 <div className="image-container placeholder-image">
                                     <div className="placeholder-icon">🚧</div>
@@ -156,19 +156,25 @@ function PortfolioProjectsSection() {
                                 </div>
                             </div>
                             <div className="project-content">
+                                <div className="project-header">
+                                    <h3 className="project-name">Projects Coming Soon</h3>
+                                </div>
+                                <div className="project-description">
+                                    <p>I'm currently working on some exciting projects that will be showcased here soon. Stay tuned for updates!</p>
+                                </div>
                                 <div className="project-skills">
-                                    <strong>Status:</strong>
+                                    <div className="skills-header">
+                                        <strong>Status</strong>
+                                    </div>
                                     <div className="skills-container">
-                                        <span className="skill-tag">
-                                            In Development
-                                        </span>
-                                        <span className="skill-tag">
-                                            Coming Soon
-                                        </span>
+                                        <span className="skill-tag">In Development</span>
+                                        <span className="skill-tag">Coming Soon</span>
+                                        <span className="skill-tag">Innovative</span>
                                     </div>
                                 </div>
                                 <div className="project-buttons">
-                                    <button className="project-button" disabled>
+                                    <button className="project-button primary" disabled>
+                                        <span className="button-icon">⏳</span>
                                         Stay Tuned
                                     </button>
                                 </div>
@@ -181,7 +187,8 @@ function PortfolioProjectsSection() {
                 {showMoreButton && (
                     <div className="more-projects-container">
                         <Link to="/projects" className="more-link">
-                            View All Projects <span className="arrow">→</span>
+                            Explore All Projects 
+                            <span className="arrow">→</span>
                         </Link>
                     </div>
                 )}
